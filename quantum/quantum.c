@@ -544,11 +544,13 @@ bool process_record_quantum(keyrecord_t *record) {
       if (record->event.pressed) {
         shift_interrupted[1] = false;
         scs_timer[1] = timer_read ();
-        register_mods(MOD_BIT(KC_RSFT));
+        //register_mods(MOD_BIT(KC_RSFT));
+        register_mods(MOD_BIT(KC_LSFT));
       }
       else {
         #ifdef DISABLE_SPACE_CADET_ROLLOVER
-          if (get_mods() & MOD_BIT(KC_LSFT)) {
+          //if (get_mods() & MOD_BIT(KC_LSFT)) {
+          if (get_mods() & MOD_BIT(KC_RSFT)) {
             shift_interrupted[0] = true;
             shift_interrupted[1] = true;
           }
@@ -557,7 +559,8 @@ bool process_record_quantum(keyrecord_t *record) {
           register_code(RSPC_KEY);
           unregister_code(RSPC_KEY);
         }
-        unregister_mods(MOD_BIT(KC_RSFT));
+        //unregister_mods(MOD_BIT(KC_RSFT));
+        unregister_mods(MOD_BIT(KC_LSFT));
       }
       return false;
     }

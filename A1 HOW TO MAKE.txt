@@ -1,0 +1,2 @@
+run msys2
+make ergodox_ez:cwynn
