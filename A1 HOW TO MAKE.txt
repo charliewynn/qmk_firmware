@@ -1,2 +1,10 @@
+put keymap .c file in: .\keyboards\ergodox_ez\keymaps\cwynn
+name it keymap.c
+
 run msys2
 make ergodox_ez:cwynn
+
+the output's .hex file will be placed in
+qmk_firmware\.build
+
+drag that into teensyloader
